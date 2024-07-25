@@ -19,6 +19,17 @@ public class TestAgendador {
         Evento evento = agendador.adicionarEvento(nome, eventoInicio, eventoFim);
         assertEquals((new Evento(nome, eventoInicio, eventoFim)).toString(), evento.toString());
     }
+    @Test
+    public void failAddEventoTest() {
+        addEventoTest();
+
+        String nome = "Evento de Teste2";
+        String eventoInicio = "2024-07-24 15:00";
+        String eventoFim = "2024-07-24 16:00";
+        Evento evento = agendador.adicionarEvento(nome, eventoInicio, eventoFim);
+        assertEquals(null, evento);
+    }
+
 
     @Test
     public void removeEventoTest() {
